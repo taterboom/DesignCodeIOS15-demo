@@ -12,6 +12,7 @@
 		F21F07E5284B4ABC00906F0F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F21F07E4284B4ABC00906F0F /* Assets.xcassets */; };
 		F21F07E8284B4ABC00906F0F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F21F07E7284B4ABC00906F0F /* Preview Assets.xcassets */; };
 		F21F07EF284B9A3E00906F0F /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21F07EE284B9A3E00906F0F /* Styles.swift */; };
+		F21F07F1284C7C2000906F0F /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21F07F0284C7C2000906F0F /* AccountView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,7 @@
 		F21F07E4284B4ABC00906F0F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F21F07E7284B4ABC00906F0F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F21F07EE284B9A3E00906F0F /* Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
+		F21F07F0284C7C2000906F0F /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 				F21F07E0284B4ABA00906F0F /* DesignCodeIOS15App.swift */,
 				F21F07E2284B4ABA00906F0F /* ContentView.swift */,
 				F21F07EE284B9A3E00906F0F /* Styles.swift */,
+				F21F07F0284C7C2000906F0F /* AccountView.swift */,
 				F21F07E4284B4ABC00906F0F /* Assets.xcassets */,
 				F21F07E6284B4ABC00906F0F /* Preview Content */,
 			);
@@ -140,6 +143,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F21F07F1284C7C2000906F0F /* AccountView.swift in Sources */,
 				F21F07EF284B9A3E00906F0F /* Styles.swift in Sources */,
 				F21F07E3284B4ABA00906F0F /* ContentView.swift in Sources */,
 				F21F07E1284B4ABA00906F0F /* DesignCodeIOS15App.swift in Sources */,
