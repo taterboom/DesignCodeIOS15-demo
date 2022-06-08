@@ -19,6 +19,8 @@ struct AccountView: View {
             }
             .listStyle(.insetGrouped)
             .navigationTitle(Text("Account"))
+            Text("hello")
+                .navigationTitle(Text("hekko"))
         }
     }
     
@@ -99,5 +101,6 @@ struct AccountView: View {
 struct AccountView_Previews: PreviewProvider {
     static var previews: some View {
         AccountView()
+            .previewInterfaceOrientation(.portrait)
     }
 }

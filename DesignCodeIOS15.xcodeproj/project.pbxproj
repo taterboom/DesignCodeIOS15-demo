@@ -15,6 +15,7 @@
 		F21F07F1284C7C2000906F0F /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21F07F0284C7C2000906F0F /* AccountView.swift */; };
 		F21F07F3284E38D900906F0F /* HexagonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21F07F2284E38D900906F0F /* HexagonView.swift */; };
 		F21F07F5284E496700906F0F /* BlobView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21F07F4284E496700906F0F /* BlobView.swift */; };
+		F2F70F23284FA1C8000CBCBC /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F70F22284FA1C8000CBCBC /* TabBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		F21F07F0284C7C2000906F0F /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 		F21F07F2284E38D900906F0F /* HexagonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexagonView.swift; sourceTree = "<group>"; };
 		F21F07F4284E496700906F0F /* BlobView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlobView.swift; sourceTree = "<group>"; };
+		F2F70F22284FA1C8000CBCBC /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 				F21F07EE284B9A3E00906F0F /* Styles.swift */,
 				F21F07F0284C7C2000906F0F /* AccountView.swift */,
 				F21F07F2284E38D900906F0F /* HexagonView.swift */,
+				F2F70F22284FA1C8000CBCBC /* TabBar.swift */,
 				F21F07F4284E496700906F0F /* BlobView.swift */,
 				F21F07E4284B4ABC00906F0F /* Assets.xcassets */,
 				F21F07E6284B4ABC00906F0F /* Preview Content */,
@@ -155,6 +158,7 @@
 				F21F07F5284E496700906F0F /* BlobView.swift in Sources */,
 				F21F07E1284B4ABA00906F0F /* DesignCodeIOS15App.swift in Sources */,
 				F21F07F3284E38D900906F0F /* HexagonView.swift in Sources */,
+				F2F70F23284FA1C8000CBCBC /* TabBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
