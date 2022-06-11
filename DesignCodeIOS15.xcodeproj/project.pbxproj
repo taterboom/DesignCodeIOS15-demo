@@ -19,6 +19,8 @@
 		F2F70F2528523C3A000CBCBC /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F70F2428523C3A000CBCBC /* HomeView.swift */; };
 		F2F70F2B285241E6000CBCBC /* FeatureItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F70F2A285241E6000CBCBC /* FeatureItem.swift */; };
 		F2F70F2D28524414000CBCBC /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F70F2C28524414000CBCBC /* NavigationBar.swift */; };
+		F2F70F302854BC37000CBCBC /* ScrollPreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F70F2F2854BC37000CBCBC /* ScrollPreferenceKey.swift */; };
+		F2F70F322854BE98000CBCBC /* AnimatableFontModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F70F312854BE97000CBCBC /* AnimatableFontModifier.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +37,8 @@
 		F2F70F2428523C3A000CBCBC /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		F2F70F2A285241E6000CBCBC /* FeatureItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureItem.swift; sourceTree = "<group>"; };
 		F2F70F2C28524414000CBCBC /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
+		F2F70F2F2854BC37000CBCBC /* ScrollPreferenceKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollPreferenceKey.swift; sourceTree = "<group>"; };
+		F2F70F312854BE97000CBCBC /* AnimatableFontModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatableFontModifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +74,7 @@
 				F21F07E0284B4ABA00906F0F /* DesignCodeIOS15App.swift */,
 				F2F70F2628523D88000CBCBC /* Navigations */,
 				F2F70F2728523D94000CBCBC /* Views */,
+				F2F70F2E2854BC00000CBCBC /* Model */,
 				F2F70F2828523D9F000CBCBC /* Styles */,
 				F2F70F2928523DBE000CBCBC /* Components */,
 				F21F07E4284B4ABC00906F0F /* Assets.xcassets */,
@@ -109,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				F21F07EE284B9A3E00906F0F /* Styles.swift */,
+				F2F70F312854BE97000CBCBC /* AnimatableFontModifier.swift */,
 			);
 			path = Styles;
 			sourceTree = "<group>";
@@ -121,6 +127,14 @@
 				F2F70F2A285241E6000CBCBC /* FeatureItem.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		F2F70F2E2854BC00000CBCBC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F2F70F2F2854BC37000CBCBC /* ScrollPreferenceKey.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -195,6 +209,7 @@
 			files = (
 				F21F07F1284C7C2000906F0F /* AccountView.swift in Sources */,
 				F21F07EF284B9A3E00906F0F /* Styles.swift in Sources */,
+				F2F70F302854BC37000CBCBC /* ScrollPreferenceKey.swift in Sources */,
 				F21F07E3284B4ABA00906F0F /* ContentView.swift in Sources */,
 				F21F07F5284E496700906F0F /* BlobView.swift in Sources */,
 				F21F07E1284B4ABA00906F0F /* DesignCodeIOS15App.swift in Sources */,
@@ -203,6 +218,7 @@
 				F2F70F2528523C3A000CBCBC /* HomeView.swift in Sources */,
 				F2F70F23284FA1C8000CBCBC /* TabBar.swift in Sources */,
 				F2F70F2B285241E6000CBCBC /* FeatureItem.swift in Sources */,
+				F2F70F322854BE98000CBCBC /* AnimatableFontModifier.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

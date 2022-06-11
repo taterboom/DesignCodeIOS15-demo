@@ -22,6 +22,9 @@ struct ContentView: View {
                 }
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .safeAreaInset(edge: .bottom) {
+                Color.clear.frame(maxWidth: .infinity, maxHeight: 44)
+            }
             TabBar()
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)

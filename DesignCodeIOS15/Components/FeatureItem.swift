@@ -55,7 +55,6 @@ struct FeatureItem: View {
         .padding(.horizontal, 20)
         .background(Image("Blob 1").offset(x: 200, y: -100))
         .overlay(Image("Illustration 5").resizable().aspectRatio(contentMode: .fit).offset(x: 40, y: -100))
-
     }
 }
 
