@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct FeatureItem: View {
+    var index: Int
+    var overlayOffestX: CGFloat
+    
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
             Spacer()
@@ -31,7 +34,7 @@ struct FeatureItem: View {
                     .strokeStyle()
                     .shadow(color: Color("Shadow").opacity(0.3), radius: 10, x: 0, y: 10)
             }
-            Text("SwiftUI for iOS 15")
+            Text("SwiftUI for iOS 15 \(index)")
                 .font(.largeTitle)
                 .fontWeight(.bold)
                 .foregroundStyle(.linearGradient(colors: [Color.red, Color.blue], startPoint: .topLeading, endPoint: .bottomTrailing))
@@ -50,16 +53,14 @@ struct FeatureItem: View {
         .frame(height: 350)
         .background(.ultraThinMaterial)
         .mask(RoundedRectangle(cornerRadius: 16, style: .continuous))
-        .shadow(color: Color("Shadow").opacity(0.3), radius: 10, x: 0, y: 10)
         .strokeStyle()
         .padding(.horizontal, 20)
-        .background(Image("Blob 1").offset(x: 200, y: -100))
-        .overlay(Image("Illustration 5").resizable().aspectRatio(contentMode: .fit).offset(x: 40, y: -100))
+        .overlay(Image("Illustration 5").resizable().aspectRatio(contentMode: .fit).frame(width: 340).offset(x: 40 + overlayOffestX, y: -80))
     }
 }
 
 struct FeatureItem_Previews: PreviewProvider {
     static var previews: some View {
-        FeatureItem()
+        FeatureItem(index: 1, overlayOffestX: 0)
     }
 }
