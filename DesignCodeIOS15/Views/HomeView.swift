@@ -8,43 +8,65 @@
 import SwiftUI
 
 struct HomeView: View {
+    @Namespace var ns
     @State private var hasScroll: Bool = false
     @State private var activeTabIndex: Int = 1
+    @State private var courseHide = true
     
     var body: some View {
         ScrollView {
-            GeometryReader { geometry in
-                Color.clear.preference(key: ScrollPreferenceKey.self, value: geometry.frame(in: .named("scrollParent")).minY)
+            geometryDetaction
+            swiper
+            if courseHide {
+                CourseItem(ns: ns)
+                    .onTapGesture {
+                        withAnimation {
+                            courseHide.toggle()
+                        }
+                    }
             }
-            TabView(selection: $activeTabIndex) {
-                ForEach(0..<4) {index in
-                    GeometryReader(content: { geomtry in
-                        let minX = geomtry.frame(in: .global).minX
-                        
-                        FeatureItem(index: index, overlayOffestX: minX / 4)
-                            .padding(.vertical, 40)
-                            .rotation3DEffect(.degrees(-minX / 20), axis: (x: 0, y: 1, z: 0))
-                            .blur(radius: abs(minX / 70))
-                            .shadow(color: Color("Shadow").opacity(0.3), radius: 10, x: 0, y: 10)
-                    })
-                }
-            }
-            .frame(height: 430)
-            .tabViewStyle(.page(indexDisplayMode: .never))
-            .background(Image("Blob 1").offset(x: 200, y: -100))
         }
         .coordinateSpace(name: "scrollParent")
-        .onPreferenceChange(ScrollPreferenceKey.self, perform: { value in
-            withAnimation {
-                hasScroll = value < 0
-            }
-        })
         .safeAreaInset(edge: .top) {
             Color.clear.frame(maxWidth: .infinity, maxHeight: 70)
         }
         .overlay {
             NavigationBar(title: "Featured", hasScroll: $hasScroll)
         }
+        
+        if !courseHide {
+            CourseView(ns: ns, hide: $courseHide)
+        }
+    }
+    
+    var geometryDetaction: some View {
+        GeometryReader { geometry in
+            Color.clear.preference(key: ScrollPreferenceKey.self, value: geometry.frame(in: .named("scrollParent")).minY)
+        }
+        .onPreferenceChange(ScrollPreferenceKey.self, perform: { value in
+            withAnimation {
+                hasScroll = value < 0
+            }
+        })
+    }
+    
+    var swiper: some View {
+        TabView(selection: $activeTabIndex) {
+            ForEach(0..<4) {index in
+                GeometryReader(content: { geomtry in
+                    let minX = geomtry.frame(in: .global).minX
+                    
+                    FeatureItem(index: index, overlayOffestX: minX / 4)
+                        .padding(.vertical, 40)
+                        .rotation3DEffect(.degrees(-minX / 20), axis: (x: 0, y: 1, z: 0))
+                        .blur(radius: abs(minX / 70))
+                        .shadow(color: Color("Shadow").opacity(0.3), radius: 10, x: 0, y: 10)
+                })
+            }
+        }
+        .frame(height: 430)
+        .tabViewStyle(.page(indexDisplayMode: .never))
+        .background(Image("Blob 1").offset(x: 200, y: -100))
     }
 }
 
