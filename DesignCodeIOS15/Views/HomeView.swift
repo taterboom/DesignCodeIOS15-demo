@@ -12,19 +12,20 @@ struct HomeView: View {
     @State private var hasScroll: Bool = false
     @State private var activeTabIndex: Int = 1
     @State private var courseHide = true
+    @State private var statusBarHide = false
+    @EnvironmentObject var model: Model
     
     var body: some View {
         ScrollView {
             geometryDetaction
             swiper
-            if courseHide {
-                CourseItem(ns: ns)
-                    .onTapGesture {
-                        withAnimation {
-                            courseHide.toggle()
-                        }
+            CourseItem(ns: ns)
+                .onTapGesture {
+                    withAnimation {
+                        courseHide = false
+                        model.showDetail = true
                     }
-            }
+                }
         }
         .coordinateSpace(name: "scrollParent")
         .safeAreaInset(edge: .top) {
@@ -33,9 +34,17 @@ struct HomeView: View {
         .overlay {
             NavigationBar(title: "Featured", hasScroll: $hasScroll)
         }
+        .statusBar(hidden: statusBarHide)
+        .onChange(of: courseHide) { newValue in
+            withAnimation {
+                statusBarHide = !newValue
+                model.showDetail = !newValue
+            }
+        }
         
         if !courseHide {
             CourseView(ns: ns, hide: $courseHide)
+                .zIndex(1)
         }
     }
     
@@ -73,5 +82,6 @@ struct HomeView: View {
 struct Home_Previews: PreviewProvider {
     static var previews: some View {
         HomeView()
+            .environmentObject(Model())
     }
 }

@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @AppStorage("activeIndex") var activeIndex = 0
+    @EnvironmentObject var model: Model
     
     var body: some View {
         ZStack {
@@ -26,6 +27,9 @@ struct ContentView: View {
                 Color.clear.frame(maxWidth: .infinity, maxHeight: 44)
             }
             TabBar()
+                .offset(y: model.showDetail ? 100 : 0)
+                .opacity(model.showDetail ? 0 : 1)
+            Text("showd\(String(model.showDetail))")
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
 
@@ -36,6 +40,7 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            .environmentObject(Model())
             
     }
 }
