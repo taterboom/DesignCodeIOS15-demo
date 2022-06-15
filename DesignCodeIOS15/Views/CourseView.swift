@@ -19,7 +19,6 @@ struct CourseView: View {
                 cover
             }
             content
-                .offset(y: 120)
         }
         .ignoresSafeArea()
         .background(Color("Background"))
@@ -36,33 +35,40 @@ struct CourseView: View {
     }
     
     var cover: some View {
-        Group {
-            Image("Background 1")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .mask(RoundedRectangle(cornerRadius: 16, style: .continuous))
-                .matchedGeometryEffect(id: "bg", in: ns)
-            VStack(alignment: .leading, spacing: 8) {
-                Text("Flutter for iOS 15")
-                    .font(.largeTitle.weight(.bold))
-                    .foregroundStyle(.primary)
-                Text("20 sections - 3 hours".uppercased())
-                    .font(.footnote)
-                    .fontWeight(.semibold)
-                    .foregroundColor(.secondary)
-                Text("Build an Flutter app for iOS 15 with custom layouts, animations and ...")
-                    .font(.footnote)
-                    .multilineTextAlignment(.leading)
-                    .lineLimit(2)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .foregroundColor(.secondary)
+        GeometryReader { geometry in
+            let scrollY = geometry.frame(in: .global).minY
+            Group {
+                Image("Background 1")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .mask(RoundedRectangle(cornerRadius: 16, style: .continuous))
+                    .matchedGeometryEffect(id: "bg", in: ns)
+                    .offset(y: -scrollY * 0.8)
+                    .blur(radius: scrollY < 0 ? min(-scrollY / 20, 10) : 1)
+                VStack(alignment: .leading, spacing: 8) {
+                    Text("Flutter for iOS 15")
+                        .font(.largeTitle.weight(.bold))
+                        .foregroundStyle(.primary)
+                    Text("20 sections - 3 hours".uppercased())
+                        .font(.footnote)
+                        .fontWeight(.semibold)
+                        .foregroundColor(.secondary)
+                    Text("Build an Flutter app for iOS 15 with custom layouts, animations and ...")
+                        .font(.footnote)
+                        .multilineTextAlignment(.leading)
+                        .lineLimit(2)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .foregroundColor(.secondary)
+                }
+                .padding(20)
+                .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
+                .offset(y: 200)
+                .padding(20)
+                .matchedGeometryEffect(id: "info", in: ns)
+                .offset(y: scrollY * 0.2)
             }
-            .padding(20)
-            .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
-            .offset(y: 200)
-            .padding(20)
-            .matchedGeometryEffect(id: "info", in: ns)
         }
+        .frame(height: 380)
     }
     
     var closeButton: some View {
